@@ -61,10 +61,10 @@ async fn main() {
             }
             match http.get_current_user().await {
                 Ok(bot_id) => (owners, bot_id.id),
-                Err(why) => panic!("could not access the bot id: {:?}", why),
+                Err(err) => panic!("could not access the bot id: {:?}", err),
             }
         }
-        Err(why) => panic!("could not access application info: {:?}", why),
+        Err(err) => panic!("could not access application info: {:?}", err),
     };
 
     let framework = StandardFramework::new()
