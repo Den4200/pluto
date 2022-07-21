@@ -38,7 +38,7 @@ pub async fn ping(ctx: &Context, msg: &Message) -> CommandResult {
         .unwrap_or("N/A".to_string());
 
     msg.channel_id
-        .send_message(&ctx.http, |m| {
+        .send_message(ctx, |m| {
             m.embed(|e| {
                 e.title("Pong!")
                     .description(&format!("Latency: {}", latency))
