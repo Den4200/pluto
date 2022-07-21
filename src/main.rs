@@ -24,7 +24,7 @@ impl TypeMapKey for ShardManagerContainer {
 struct Handler;
 
 #[group]
-#[commands(ping)]
+#[commands(ping, uwuify)]
 struct General;
 
 #[async_trait]
